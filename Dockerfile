@@ -5,11 +5,11 @@ RUN mkdir -p /usr/back
 # Nos cambiamos a ese directorio
 WORKDIR /usr/back
 # Copiamos el package json para gestionar las dependencias 
-COPY bancadigital_back/package.json /usr/back
+COPY package.json /usr/back
 # Instalamos esas depndencias
 RUN npm install
 # Copiamos el código fuente de la aplicacion
-COPY bancadigital_back/. /usr/back
+COPY . /usr/back
 # Exponemos el Puerto
 EXPOSE 3200
 # Arrancamos

@@ -17,6 +17,7 @@ controller.recovery_usuario = async function get(req, res, next) {
             context.pass = req.query.userPass;
 
             const rows = await cliente.find_cliente_userrecovery(context);
+            console.log("rows 0",rows[0]);
             if (req.query.userId) {
                     //  if (rows.length === 1) {
                         /*res.render('customer',{

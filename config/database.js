@@ -5,7 +5,7 @@ module.exports = {
       port:process.env.DB_PORT || 3306,
       user: 'root',
       password: 'deatnote',
-      database:'CONSULTECTI',
+      database:'consultecti',
       poolMin: 10,
       poolMax: 10,
       poolIncrement: 0

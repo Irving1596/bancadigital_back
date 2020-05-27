@@ -1,6 +1,6 @@
 # bancadigital_back
 Reto de programación: Recuperar mi usuario de la banca digital
 
-Tier APP
+## Tier APP
 
-Utilizando Node.js 14 con Mysql 8.0.20
+El projecto fue generado utilizando Node.js 14 con una conexión a Mysql 8.0.20

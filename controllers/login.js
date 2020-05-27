@@ -19,15 +19,9 @@ controller.recovery_usuario = async function get(req, res, next) {
             const rows = await cliente.find_cliente_userrecovery(context);
             console.log("rows 0",rows[0]);
             if (req.query.userId) {
-                    //  if (rows.length === 1) {
-                        /*res.render('customer',{
-                          data: rows
-                        });*/
+  
                           res.status(200).json(rows[0]);
-                         
-                      /*} else {
-                        res.status(404).end();
-                      }*/
+        
                     } else {
   
               res.status(200).json(rows);

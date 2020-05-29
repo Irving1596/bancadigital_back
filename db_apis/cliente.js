@@ -45,8 +45,10 @@ function send_code(phone, otp) {
     // Download the helper library from https://www.twilio.com/docs/node/install
     // Your Account Sid and Auth Token from twilio.com/console
     // DANGER! This is insecure. See http://twil.io/secure
-    const accountSid = 'ACa26baa654624f2414d7fe7f7d824a3a8';
-    const authToken = 'f05ae72657ee5e13d11fa506d822243e';
+
+
+   const accountSid = 'ACa26baa654624f2414d7fe7f7d824a3a8';
+   const authToken = 'f05ae72657ee5e13d11fa506d822243e';
     const client = require('twilio')(accountSid, authToken);
     client.messages
       .create({
@@ -68,13 +70,13 @@ function send_code(phone, otp) {
 
 async function creacion_hash(phone) {
   const otp = otpGenerator.generate(6, { alphabets: false, upperCase: false, specialChars: false });
-  console.log("OTP=", otp);
+  console.log("****CODIGO OTP****", otp);
   const ttl = 3 * 60 * 1000; //3 Minutes in miliseconds
   const expires = Date.now() + ttl; //timestamp to 3 minutes in the future
   const data = `${phone}.${otp}.${expires}`;
   const hash = crypto.createHmac("sha256", key).update(data).digest("hex");
   const fullHash = `${hash}.${expires}`;
-  send_code(phone,otp)
+  //send_code(phone,otp)
   return fullHash;
 }
 

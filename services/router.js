@@ -2,25 +2,10 @@ const express = require('express');
 const router = new express.Router();
 const login = require('../controllers/login.js');
 //Bancadigital
+//endpoint para obtener los datos del cliente para el proceso de verificacion
 router.get('/cliente_recovery/:id?',login.recovery_usuario);
-
-
-
-
-
-
-
-   //SMEP
-        //Sin Sequelize
-        //router.get('/profesor_list/',profesor.list_profesores);
-        //Con Sequelize
-     //router.get('/profesor_list/',profesor.list_profesores_seq);
-     //router.get('/estudiante_list/',estudiante.list_estudiantes);
-
-
-//ruta para el login sin sequelize
-   //  router.get('/user_list/',user.list_users);
-//router of login with sequelize
-     //router.get('/user_list/',user.list_users_seq);
-
-     module.exports = router;
+//generacion del codigo otp
+router.post('/create_code',login.create_code);
+//envio del codigo otp via SMS
+router.post('/valid_code',login.valid_code);
+module.exports = router;
